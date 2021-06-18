@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../models/restaurant.dart';
+import '../models/shops.dart';
 import '../utils/app_routes.dart';
 import '../utils/push_page_arguments.dart';
 
 class RestaurantList extends StatelessWidget {
-  final Restaurant restaurant;
+  final Shops restaurant;
 
   RestaurantList({this.restaurant});
   @override

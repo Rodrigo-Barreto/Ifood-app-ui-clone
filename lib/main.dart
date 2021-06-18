@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ifood/screens/home_screen.dart';
+
 import 'utils/app_routes.dart';
-import 'screens/restaurant_page_screen.dart';
+import 'screens/restaurant_menu_screen.dart';
 import 'screens/tabs_screen.dart';
 import 'screens/category_screen.dart';
 

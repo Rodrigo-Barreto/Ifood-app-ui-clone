@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Restaurant {
+class Shops {
   final String id;
   final String title;
   final Color color;
   final String adress;
   final String category;
 
-  const Restaurant({
+  const Shops({
     @required this.id,
     @required this.title,
     this.color = Colors.orange,

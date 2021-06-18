@@ -26,5 +26,10 @@ const Dummy_Categories = const [
     id: 'c4',
     title: 'Italiano',
     color: Colors.pink,
+  ),
+  Category(
+    id: 'c5',
+    title: 'Mercado',
+    color: Colors.blue,
   )
 ];

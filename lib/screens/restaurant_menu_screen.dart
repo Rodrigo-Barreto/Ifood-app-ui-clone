@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import '../models/restaurant.dart';
+import '../models/shops.dart';
+import '../components/restaurant_menu_item.dart';
 
 class RestaurantPageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final restaurant = ModalRoute.of(context).settings.arguments as Restaurant;
+    final restaurant = ModalRoute.of(context).settings.arguments as Shops;
 
     return Scaffold(
       appBar: AppBar(
@@ -13,14 +14,7 @@ class RestaurantPageScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          children: [
-            Text(restaurant.category),
-            Text(
-              restaurant.adress,
-            ),
-          ],
-        ),
+        child: RestaurantMenuItem(),
       ),
     );
   }

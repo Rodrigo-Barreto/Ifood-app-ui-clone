@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:ifood/components/restaurant_list.dart';
+import 'package:ifood/components/shop_card_item.dart';
 
 import '../models/category.dart';
-import '../data/dummy_data_restaurant.dart';
+import '../data/dummy_data.dart';
 
 class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final category = ModalRoute.of(context).settings.arguments as Category;
-    var restaurant = Dummy_Restaurant.where((element) {
+    var restaurant = Dummy_Data_Shops.where((element) {
       return element.category.contains(category.title);
     }).toList();
 
