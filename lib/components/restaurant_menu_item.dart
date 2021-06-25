@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import '../models/menuitem.dart';
 
 class RestaurantMenuItem extends StatelessWidget {
+  MenuItem menuItem;
+  RestaurantMenuItem({this.menuItem});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -9,7 +12,7 @@ class RestaurantMenuItem extends StatelessWidget {
           child: InkWell(
             child: Container(
               margin: EdgeInsets.all(10),
-              height: 150,
+              height: 180,
               width: double.infinity,
               child: Row(
                 children: [
@@ -21,27 +24,19 @@ class RestaurantMenuItem extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Pastel de Calabresa',
+                            menuItem.title,
                             style: TextStyle(fontSize: 16),
                           ),
                           SizedBox(height: 5),
-                          Text(
-                              'orem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie leo in elit sagittis, at ultrices ligula fermentum'),
+                          Text(menuItem.description),
                           SizedBox(height: 20),
                           Row(
                             children: [
                               Text(
-                                'R\$ 8,00',
+                                ' R\$ ${menuItem.price}',
                                 style: TextStyle(
                                     fontSize: 17, color: Colors.green),
                               ),
-                              Text(
-                                ' R\$ 8,00',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.grey,
-                                ),
-                              )
                             ],
                           )
                         ],
@@ -53,7 +48,7 @@ class RestaurantMenuItem extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       child: Image.network(
-                        'https://www.sabornamesa.com.br/media/k2/items/cache/b9ad772005653afce4d4bd46c2efe842_L.jpg',
+                        menuItem.imageUrl,
                         fit: BoxFit.cover,
                         height: 95,
                       ),

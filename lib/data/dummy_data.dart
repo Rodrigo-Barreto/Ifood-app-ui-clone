@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/shops.dart';
+import 'package:ifood/models/menuitem.dart';
 
 const Dummy_Data_Shops = const [
   Shops(
@@ -58,4 +59,16 @@ const Dummy_Data_Shops = const [
     category: 'Mercado',
     color: Colors.blue,
   ),
+];
+
+const Dummy_data_Menu = const [
+  MenuItem(
+      title: 'Esfihas Promoção',
+      id: 'm1',
+      price: 10.80,
+      description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium tempus bibendum. Phasellus id dignissim nibh. Nulla facilisi. Pellentesque nec ante eros. Suspendisse potenti',
+      imageUrl:
+          'https://img.itdg.com.br/tdg/images/recipes/000/110/449/326013/326013_original.jpg?mode=crop&width=710&height=400',
+      idShops: 'r3'),
 ];

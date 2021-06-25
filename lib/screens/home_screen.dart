@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ifood/models/shops.dart';
+
+import 'package:ifood/screens/favorite_screen.dart';
+import 'package:ifood/utils/app_routes.dart';
+import 'package:ifood/utils/push_page_arguments.dart';
 import '../screens/restaurant_list_screen.dart';
 import '../screens/market_list_screen.dart';
 
@@ -33,6 +38,15 @@ class _HomeScreenState extends State<HomeScreen>
                 actions: [
                   IconButton(
                       icon: Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      ),
+                      onPressed: () => pushPageArguments(
+                            context,
+                            AppRoutes.FavoriteScreen,
+                          )),
+                  IconButton(
+                      icon: Icon(
                         Icons.qr_code_scanner_outlined,
                         color: Colors.red,
                       ),
@@ -55,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ),
                 backgroundColor: Colors.white,
                 bottom: PreferredSize(
-                  preferredSize: Size(200, 050),
+                  preferredSize: Size(400, 50),
                   child: Container(
                     margin: EdgeInsets.only(
                       left: 10,
@@ -63,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen>
                     child: Row(
                       children: [
                         Container(
-                          width: 300,
+                          width: 400,
                           child: TabBar(
                             isScrollable: true,
                             indicatorColor: Colors.red,
@@ -71,15 +85,17 @@ class _HomeScreenState extends State<HomeScreen>
                             unselectedLabelColor: Colors.grey,
                             tabs: [
                               Tab(
-                                  child: Text(
-                                "Restaurantes",
-                                style: TextStyle(fontSize: 18),
-                              )),
+                                child: Text(
+                                  "Restaurantes",
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                              ),
                               Tab(
-                                  child: Text(
-                                "Mercados",
-                                style: TextStyle(fontSize: 18),
-                              )),
+                                child: Text(
+                                  "Mercados",
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                              ),
                             ],
                           ),
                         ),

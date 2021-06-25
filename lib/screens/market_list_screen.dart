@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:ifood/components/shop_card_item.dart';
-import 'package:ifood/data/dummy_data.dart';
+
+import 'package:ifood/models/shops.dart';
+import 'package:ifood/provider/shops.dart';
+import 'package:provider/provider.dart';
 
 class MarketScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var market = Dummy_Data_Shops.where((element) {
+    final List<Shops> shops = Provider.of<ShopsList>(context).items;
+    var market = shops.where((element) {
       return element.category.contains('Mercado');
     }).toList();
 
