@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ifood/components/filter_item.dart';
 import 'package:ifood/models/shops.dart';
 import 'package:ifood/provider/shops.dart';
 import 'package:provider/provider.dart';
@@ -13,11 +14,16 @@ class RestaurantListScreen extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.only(top: 7),
         child: Column(
-          children: shops.map((res) {
-            return RestaurantList(
-              restaurant: res,
-            );
-          }).toList(),
+          children: [
+            FilterItem(),
+            Column(
+              children: shops.map((res) {
+                return RestaurantList(
+                  restaurant: res,
+                );
+              }).toList(),
+            ),
+          ],
         ),
       ),
     );
